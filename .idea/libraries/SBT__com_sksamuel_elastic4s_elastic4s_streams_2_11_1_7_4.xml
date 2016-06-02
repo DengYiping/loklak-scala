@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: com.sksamuel.elastic4s:elastic4s-streams_2.11:1.7.4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib_managed/jars/com.sksamuel.elastic4s/elastic4s-streams_2.11/elastic4s-streams_2.11-1.7.4.jar!/"/>
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib_managed/docs/com.sksamuel.elastic4s/elastic4s-streams_2.11/elastic4s-streams_2.11-1.7.4-javadoc.jar!/"/>
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib_managed/srcs/com.sksamuel.elastic4s/elastic4s-streams_2.11/elastic4s-streams_2.11-1.7.4-sources.jar!/"/>
+    </SOURCES>
+  </library>
+</component>

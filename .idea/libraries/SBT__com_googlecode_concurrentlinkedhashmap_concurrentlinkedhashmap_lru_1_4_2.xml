@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="SBT: com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2">
+    <CLASSES>
+      <root 
+      url="jar://$PROJECT_DIR$/lib_managed/jars/com.googlecode.concurrentlinkedhashmap/concurrentlinkedhashmap-lru/concurrentlinkedhashmap-lru-1.4.2.jar!/">
+</root>
+    </CLASSES>
+    <JAVADOC>
+      <root 
+      url="jar://$PROJECT_DIR$/lib_managed/docs/com.googlecode.concurrentlinkedhashmap/concurrentlinkedhashmap-lru/concurrentlinkedhashmap-lru-1.4.2-javadoc.jar!/">
+</root>
+    </JAVADOC>
+    <SOURCES>
+      <root 
+      url="jar://$PROJECT_DIR$/lib_managed/srcs/com.googlecode.concurrentlinkedhashmap/concurrentlinkedhashmap-lru/concurrentlinkedhashmap-lru-1.4.2-sources.jar!/">
+</root>
+    </SOURCES>
+  </library>
+</component>

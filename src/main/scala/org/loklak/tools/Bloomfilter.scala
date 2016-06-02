@@ -8,6 +8,14 @@ import scala.math.log
 import scala.util.hashing.MurmurHash3._
 import scala.math.abs
 
+/**
+  *
+  * should return true if in the filter
+  * @param k
+  * @param content
+  * @tparam T type of parameters
+  *
+  */
 class Bloomfilter[T] (val k: Int,
                       private val content: Array[Boolean]
                      ) extends(T => Boolean){

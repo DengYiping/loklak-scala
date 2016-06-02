@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: org.scalaj:scalaj-http_2.11:2.2.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib_managed/jars/org.scalaj/scalaj-http_2.11/scalaj-http_2.11-2.2.0.jar!/"/>
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib_managed/docs/org.scalaj/scalaj-http_2.11/scalaj-http_2.11-2.2.0-javadoc.jar!/"/>
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib_managed/srcs/org.scalaj/scalaj-http_2.11/scalaj-http_2.11-2.2.0-sources.jar!/"/>
+    </SOURCES>
+  </library>
+</component>

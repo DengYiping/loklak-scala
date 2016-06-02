@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SBT: org.elasticsearch:elasticsearch:1.7.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib_managed/jars/org.elasticsearch/elasticsearch/elasticsearch-1.7.1.jar!/"/>
+    </CLASSES>
+    <JAVADOC> </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib_managed/srcs/org.elasticsearch/elasticsearch/elasticsearch-1.7.1-sources.jar!/"/>
+    </SOURCES>
+  </library>
+</component>

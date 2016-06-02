@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: com.spatial4j:spatial4j:0.4.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib_managed/bundles/com.spatial4j/spatial4j/spatial4j-0.4.1.jar!/"/>
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib_managed/docs/com.spatial4j/spatial4j/spatial4j-0.4.1-javadoc.jar!/"/>
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib_managed/srcs/com.spatial4j/spatial4j/spatial4j-0.4.1-sources.jar!/"/>
+    </SOURCES>
+  </library>
+</component>

@@ -18,7 +18,7 @@ object TwitterCrawler {
     * @param raw raw multiline string
     * @return List of lines
     */
-  def make_List(raw:String) = raw.lines.toList.map(_.trim).filter{
+  private def make_List(raw:String) = raw.lines.toList.map(_.trim).filter{
     line =>{
       if (line.length > 15)
         true
@@ -32,7 +32,7 @@ object TwitterCrawler {
     * @param key_word a key_word
     * @return url
     */
-  def url_twitter_search(key_word:String):String = {
+  private def url_twitter_search(key_word:String):String = {
     val legal_word = key_word.replace('+',' ').replace(',',' ').replace('"',' ').replaceAllLiterally(" ","%20")
     "https://twitter.com/search?f=tweets&vertical=defaul&q=" + legal_word + "&src=typd"
   }
@@ -43,7 +43,7 @@ object TwitterCrawler {
     * @param raw a line
     * @return a TweetComp or null
     */
-  def parseTweetComp(raw:String):TweetComp = {
+  private def parseTweetComp(raw:String):TweetComp = {
     raw match{
       case UserInfo.pattern(_*) => UserInfo.extractor(raw)
       case UserAvatar.pattern(_*) => UserAvatar.extractor(raw)
@@ -110,6 +110,7 @@ object TwitterCrawler {
     two_leveled.toList
   }
 
+  def grouped_search(topic:String) = group_tweets(search(topic))
   def main(args: Array[String]): Unit ={
 
     val tweets = try{this.search("from:VMware")}

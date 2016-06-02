@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: org.jvnet.mimepull:mimepull:1.9.5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib_managed/jars/org.jvnet.mimepull/mimepull/mimepull-1.9.5.jar!/"/>
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib_managed/docs/org.jvnet.mimepull/mimepull/mimepull-1.9.5-javadoc.jar!/"/>
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib_managed/srcs/org.jvnet.mimepull/mimepull/mimepull-1.9.5-sources.jar!/"/>
+    </SOURCES>
+  </library>
+</component>
