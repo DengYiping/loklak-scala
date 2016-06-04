@@ -24,5 +24,6 @@ libraryDependencies ++= {
     "com.typesafe.akka" %% "akka-testkit" % akkaV % "test"
   )
 }
-libraryDependencies += "com.sksamuel.elastic4s" %% "elastic4s-streams" % "1.7.4"
+libraryDependencies += "org.elasticsearch" % "elasticsearch" % "2.1.1"
+libraryDependencies += "com.typesafe" % "config" % "1.3.0"
 retrieveManaged := true

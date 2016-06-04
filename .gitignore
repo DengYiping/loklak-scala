@@ -1,3 +1,5 @@
 target/
 out/
 lib_managed/
+.idea/
+.idea_modules/

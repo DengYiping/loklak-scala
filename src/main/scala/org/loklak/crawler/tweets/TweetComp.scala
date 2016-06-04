@@ -20,6 +20,8 @@ trait Downloadable{
   def url:String
 }
 
+trait SeedFeature
+
 class UserInfo(val value:(String,String,Long)) extends TweetComp{
   override val key = "userinfo"
   override def toString = value.toString()
