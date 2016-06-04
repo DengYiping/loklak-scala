@@ -10,29 +10,15 @@ import _root_.org.loklak.crawler.tweets._
 import scala.collection.mutable.ListBuffer
 
 case class OnlineSearchException(e:String) extends Throwable
-object TwitterCrawler {
+object TwitterSearchFunc extends (String => List[List[TweetComp]]) {
   import org.loklak.crawler.tweets._
-
-  /**
-    * given a raw string data from http, parse it to list of lines, and remove some short line
-    * @param raw raw multiline string
-    * @return List of lines
-    */
-  private def make_List(raw:String) = raw.lines.toList.map(_.trim).filter{
-    line =>{
-      if (line.length > 15)
-        true
-      else
-        false
-    }
-  }
 
   /**
     * given a key word, return its correct format url to perform search
     * @param key_word a key_word
     * @return url
     */
-  private def url_twitter_search(key_word:String):String = {
+  private def contructSearchURL(key_word:String):String = {
     val legal_word = key_word.replace('+',' ').replace(',',' ').replace('"',' ').replaceAllLiterally(" ","%20")
     "https://twitter.com/search?f=tweets&vertical=defaul&q=" + legal_word + "&src=typd"
   }
@@ -43,7 +29,7 @@ object TwitterCrawler {
     * @param raw a line
     * @return a TweetComp or null
     */
-  private def parseTweetComp(raw:String):TweetComp = {
+  private def parseLine(raw:String):TweetComp = {
     raw match{
       case UserInfo.pattern(_*) => UserInfo.extractor(raw)
       case UserAvatar.pattern(_*) => UserAvatar.extractor(raw)
@@ -64,25 +50,20 @@ object TwitterCrawler {
     * @return a raw TweetComp
     * @throws OnlineSearchException(e:String)
     */
-  def search(topic:String):List[TweetComp] = {
+  private def search(topic:String):List[TweetComp] = {
     val raw:String = try{
-      HttpReq.get(url_twitter_search(topic))
+      HttpReq.get(contructSearchURL(topic))
     }catch{
       case HttpException(e) => throw new OnlineSearchException(e)
       case _:Throwable => throw new OnlineSearchException("unknown error")
     }
-    val lines = make_List(raw)
-    //uncomment the following line to get raw http file for debug
-    /*
-    println("print raw data:")
-    println(lines mkString "\n")
-    */
-    val tweets = for{
+    val lines = raw.lines.withFilter(_.length > 15).map(_.trim).toList
+
+    for{
       line <-lines
-      trans = parseTweetComp(line)
+      trans = parseLine(line)
       if trans != null
     }yield trans
-    tweets
   }
 
   /**
@@ -90,7 +71,7 @@ object TwitterCrawler {
     * @param raw Put the element of single tweet together in a List
     * @return List of List of TweetComp
     */
-  def group_tweets(raw:List[TweetComp]):List[List[TweetComp]] = {
+  private def group_tweets(raw:List[TweetComp]):List[List[TweetComp]] = {
     val reversed = raw.reverse //over reversed, we will reverse it back later
     var temp = new ListBuffer[TweetComp]
     val two_leveled = new ListBuffer[List[TweetComp]]
@@ -109,11 +90,11 @@ object TwitterCrawler {
     }//end of foreach
     two_leveled.toList
   }
-
   def grouped_search(topic:String) = group_tweets(search(topic))
+  def apply(topic:String) = group_tweets(search(topic))
   def main(args: Array[String]): Unit ={
 
-    val tweets = try{this.search("from:VMware")}
+    val tweets = try{this.search("Trump")}
     catch{
       case OnlineSearchException(e) => print(e); Nil
     }
