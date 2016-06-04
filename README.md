@@ -1,6 +1,8 @@
 loklak-scala
 -------------
 -------------
+[![Build Status](https://travis-ci.org/DengYiping/loklak-scala.svg?branch=master)](https://travis-ci.org/DengYiping/loklak-scala)
+
 
 loklak is a p2p twitter crawler written on java. However, when I open their source code, it really surprise me.
 Scala is better than java in some perspective, especially when developing a big project.
